@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.0"
+    defaultConfig {
+        applicationId "androidtutorial.brunodegan.pdfviewer"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    /* PARA TRABALHO COMPLETO COM O FRAMEWORK RECYCLERVIEW */
+    compile 'com.android.support:recyclerview-v7:26.+'
+
+    /* PARA TRABALHO COMPLETO COM O CARDVIEW */
+    compile 'com.android.support:cardview-v7:26.+'
+
+    /* PARA ACESSO A VIEWS COMO: COORDINATORLAYOUT, APPBARLAYOUT E TOOLBAR */
+    compile 'com.android.support:design:26.+'
+
+    /*pdf viewer library*/
+    compile 'com.github.barteksc:android-pdf-viewer:2.6.1'
+
+    compile "com.blankj:utilcode:1.7.1"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    compile 'com.android.support:appcompat-v7:26.0.1'
+    testImplementation 'junit:junit:4.12'
+}
