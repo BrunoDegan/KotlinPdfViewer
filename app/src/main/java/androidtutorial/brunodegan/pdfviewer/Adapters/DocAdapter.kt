@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,7 +25,7 @@ class DocAdapter(private val context : Context,
 	}
 	
 	override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder {
-		val v = LayoutInflater.from(context).inflate(R.layout.iten_doc,parent,false)
+		val v = LayoutInflater.from(context).inflate(R.layout.item_doc,parent,false)
 		return ViewHolder(v)
 	}
 	
